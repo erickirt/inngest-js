@@ -1,5 +1,11 @@
 # inngest
 
+## 3.52.6
+
+### Patch Changes
+
+- [#1350](https://github.com/inngest/inngest-js/pull/1350) [`470fdb9`](https://github.com/inngest/inngest-js/commit/470fdb9845514b6597e0bd7c6db469d3808f6dcf) Thanks [@amh4r](https://github.com/amh4r)! - Fix false NESTING_STEPS error
+
 ## 3.52.5
 
 ### Patch Changes
