@@ -1,5 +1,11 @@
 # inngest
 
+## 4.0.3
+
+### Patch Changes
+
+- [#1389](https://github.com/inngest/inngest-js/pull/1389) [`905d4b2`](https://github.com/inngest/inngest-js/commit/905d4b245c0512a4ac5d825ef1b2898f9cc3587d) Thanks [@amh4r](https://github.com/amh4r)! - Ensure we track retries when creating a new run
+
 ## 4.0.2
 
 ### Patch Changes
