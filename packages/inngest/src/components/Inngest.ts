@@ -50,7 +50,6 @@ import {
   type SendEventResponse,
   sendEventResponseSchema,
 } from "../types.ts";
-
 import { getAsyncCtx } from "./execution/als.ts";
 import { InngestFunction } from "./InngestFunction.ts";
 import type { InngestFunctionReference } from "./InngestFunctionReference.ts";
@@ -1160,8 +1159,9 @@ export namespace Inngest {
   type ResolveTriggers<T> = T extends undefined ? [] : AsArray<NonNullable<T>>;
 
   /**
-   * Input type for createFunction that accepts raw trigger input (single, array, or undefined)
-   * while keeping all other fields from InngestFunction.Options.
+   * Input type for createFunction that accepts raw trigger input (single,
+   * array, or undefined) while keeping all other fields from
+   * InngestFunction.Options.
    */
   export type CreateFunctionInput<
     TFnMiddleware extends Middleware.Class[] | undefined,

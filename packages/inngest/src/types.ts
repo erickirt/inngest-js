@@ -11,6 +11,7 @@
 
 import type { StandardSchemaV1 } from "@standard-schema/spec";
 import { z } from "zod/v3";
+import type { DeferredFunction } from "./components/DeferredFunction.ts";
 import type { Inngest } from "./components/Inngest.ts";
 import type { InngestEndpointAdapter } from "./components/InngestEndpointAdapter.ts";
 import type { InngestFunction } from "./components/InngestFunction.ts";
@@ -266,6 +267,9 @@ export enum StepOpCode {
 
   RunComplete = "RunComplete",
   DiscoveryRequest = "DiscoveryRequest",
+
+  DeferAdd = "DeferAdd",
+  DeferAbort = "DeferAbort",
 }
 
 /**
@@ -490,12 +494,44 @@ export type WithInvocation<T extends EventPayload> = Simplify<
 >;
 
 /**
+ * EXPERIMENTAL: This API is not yet stable and may change in the future without
+ * a major version bump.
+ *
+ * Context extension that exposes `defer` on every handler.
+ *
+ * `defer(id, { function, data })` emits a `DeferAdd` opcode that triggers the
+ * referenced defer function (created via `createDefer`) with `data` validated
+ * against the function's schema. The data type is inferred from the function's
+ * schema.
+ */
+export type DeferFn = <TFn extends DeferredFunction.Any>(
+  id: string,
+  options: {
+    function: TFn;
+    data: TFn extends DeferredFunction<
+      StandardSchemaV1<infer D extends Record<string, unknown>>
+    >
+      ? D
+      : // biome-ignore lint/suspicious/noExplicitAny: no schema = any
+        Record<string, any>;
+  },
+) => void;
+
+/**
  * Base context object, omitting any extras that may be added by middleware or
  * function configuration.
  *
  * @public
  */
 export type BaseContext<TClient extends Inngest.Any> = {
+  /**
+   * EXPERIMENTAL: This API is not yet stable and may change in the future
+   * without a major version bump.
+   *
+   * Fire-and-forget a typed deferred function. See {@link DeferFn}.
+   */
+  defer: DeferFn;
+
   /**
    * The event data present in the payload.
    */
