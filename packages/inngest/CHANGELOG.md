@@ -1,5 +1,23 @@
 # inngest
 
+## 4.5.0
+
+### Minor Changes
+
+- [#1522](https://github.com/inngest/inngest-js/pull/1522) [`ebeb451`](https://github.com/inngest/inngest-js/commit/ebeb4516037015c0e6f1d417be55009f4a64fb89) Thanks [@Linell](https://github.com/Linell)! - Bump minimum `@opentelemetry/auto-instrumentations-node` to `0.75.0` to address
+  [GHSA-q7rr-3cgh-j5r3](https://github.com/advisories/GHSA-q7rr-3cgh-j5r3) in the
+  transitive `@opentelemetry/sdk-node` / `@opentelemetry/exporter-prometheus` packages.
+
+  Note that upstream `auto-instrumentations-node@0.72.0` dropped bundled Fastify,
+  instrumentation, so if you relied on it for tracing your Fastify routes, add
+  `@opentelemetry/instrumentation-fastify` directly.
+
+### Patch Changes
+
+- [#1506](https://github.com/inngest/inngest-js/pull/1506) [`342a736`](https://github.com/inngest/inngest-js/commit/342a7369b757c5dd34f009eabcb6642cd207a721) Thanks [@amh4r](https://github.com/amh4r)! - Add option to disable unauthed PUT requests
+
+- [#1518](https://github.com/inngest/inngest-js/pull/1518) [`fd71a95`](https://github.com/inngest/inngest-js/commit/fd71a95bc2a5a1cbc20ae8d80a97a6e12955ce9c) Thanks [@Linell](https://github.com/Linell)! - Fix RetryAfterError not respected
+
 ## 4.4.0
 
 ### Minor Changes
