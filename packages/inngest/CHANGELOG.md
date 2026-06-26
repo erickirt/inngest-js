@@ -1,5 +1,11 @@
 # inngest
 
+## 4.12.0
+
+### Minor Changes
+
+- [#1376](https://github.com/inngest/inngest-js/pull/1376) [`525a674`](https://github.com/inngest/inngest-js/commit/525a6743d0c58dd77dce857e5d7c9294eab639d3) Thanks [@gwax](https://github.com/gwax)! - Add streaming support to `inngest/sveltekit` serve handlers.
+
 ## 4.11.0
 
 ### Minor Changes
