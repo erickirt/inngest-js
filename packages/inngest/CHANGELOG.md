@@ -1,5 +1,11 @@
 # inngest
 
+## 4.17.1
+
+### Patch Changes
+
+- [#1666](https://github.com/inngest/inngest-js/pull/1666) [`c101493`](https://github.com/inngest/inngest-js/commit/c10149326c2727533a7bd709a348b5b5bf5ab1d5) Thanks [@Linell](https://github.com/Linell)! - Remove the unmaintained `serialize-error-cjs` dependency
+
 ## 4.17.0
 
 ### Minor Changes
