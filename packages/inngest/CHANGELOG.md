@@ -1,5 +1,11 @@
 # inngest
 
+## 4.20.0
+
+### Minor Changes
+
+- [#1672](https://github.com/inngest/inngest-js/pull/1672) [`3781301`](https://github.com/inngest/inngest-js/commit/378130115bfa80f0b8d9e07d1acef0777114f904) Thanks [@jakobevangelista](https://github.com/jakobevangelista)! - Add sandbox snapshot create, list, get, wait, delete, and clone APIs to both the direct client and `step.sandbox`.
+
 ## 4.19.0
 
 ### Minor Changes
